@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>count the each characters</h1>
+
+    <input type="text"  id="inpu">
+    <button onclick="send()">send</button>
+    <ul id="list"></ul>
+    <script>
+         function send(){
+            let input=document.getElementById("inpu")
+            let list=document.getElementById("list")
+            let creat=document.createElement("li")
+                input=input.value 
+            let charcount={};
+            for(let i=0; i<input.length;i++){
+                let ch=input[i];
+                 if(!charcount[ch]){
+                    charcount[ch]=0;
+                 }
+                 charcount[ch]++
+              
+               }
+               for(let i=0; i<input.length;i++){
+                 let ch=input[i];
+                 const li=document.createElement("li")
+                 li.textContent=`${ch} : ${charcount[ch]} `
+                 list.appendChild(li)
+              
+               }
+
+
+        
+         }
+       
+    </script>
+    
+</body>
+</html>
